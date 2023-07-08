@@ -10,7 +10,7 @@ import 'attendence_result.dart';
 
 
 class QrCode extends StatefulWidget {
-  QrCode({Key? key}) : super(key: key);
+  const QrCode({Key? key}) : super(key: key);
 
   State<QrCode> createState() => _QrCodeState();
 

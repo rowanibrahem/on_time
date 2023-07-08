@@ -7,6 +7,8 @@ import '../../../../core/utilies/styles.dart';
 
 
 class AttBody extends StatelessWidget {
+  const AttBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

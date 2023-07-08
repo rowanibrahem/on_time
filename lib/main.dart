@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'core/shared_component/app_bar2.dart';
 import 'core/shared_component/bottom_navigation_bar.dart';
 import 'core/utilies/assets.dart';
 import 'features/attendence/presentation/widgets/attednce_view.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
     fit: BoxFit.cover,
     ),
     ),
-      child :  QrCode(),
+      child :  NoticesPage(),
     ),
     );
   }
