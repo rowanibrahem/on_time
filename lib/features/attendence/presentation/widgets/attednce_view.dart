@@ -2,9 +2,13 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:on_time/features/attendence/presentation/widgets/qr_overlay.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 
+import '../../../../constants.dart';
+import '../../../../core/utilies/assets.dart';
+import '../../../../core/utilies/styles.dart';
 import 'attendence_result.dart';
 
 
@@ -32,6 +36,7 @@ class _QrState extends State<Qr> {
         child: Column(
           children: [
             Expanded(
+              flex: 1,
               child: Container(
                 child: Row(
                   children: [
@@ -56,6 +61,7 @@ class _QrState extends State<Qr> {
                     SizedBox(width: 8),
                     Text(
                       'Attendance',
+                        style: Styles.textStyle152.copyWith(fontSize: 37 , fontWeight: FontWeight.w700)
                     ),
                   ],
                 ),
@@ -77,6 +83,7 @@ class _QrState extends State<Qr> {
                         }
                       },
                     ),
+                    QRScannerOverlay(overlayColour: Colors.grey.withOpacity(.5),),
                   ],
                 )),
             Expanded(
@@ -87,13 +94,15 @@ class _QrState extends State<Qr> {
                     padding: const EdgeInsets.all(150.0),
                     child: Column(
                       children: [
-                        Text('point camera on QR code'),
+                        Text('point camera on QR code',
+                          style: Styles.textStyle152.copyWith(fontSize: 30 , color: kPrimaryColor),
+                        ),
                         SizedBox(
                           height: 100,
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            minimumSize: Size(50, 50),
+                            minimumSize: Size(double.infinity, 100),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15)),
                             // width: double.infinity,
@@ -107,6 +116,7 @@ class _QrState extends State<Qr> {
                           },
                           child: Text(
                             'Cancel',
+                            style: Styles.textStyle152.copyWith(fontSize: 30 , fontWeight: FontWeight.w700),
                           ),
                         ),
                       ],

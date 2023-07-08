@@ -31,30 +31,32 @@ class _SplashScreenState extends State<SplashBody> {
     );
   }
   Widget build(BuildContext context) {
-    return Container(
-    decoration: const BoxDecoration(
-    image: DecorationImage(
-    image: AssetImage(AssetData.backGround),
-    fit: BoxFit.cover,
-    ),
-    ),
-      child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset(
-                'assets/images/clock.png',
-                width: 300,
-                height: 300,
-              ),
-               Text(
-                'On Time',
-                style: Styles.textStyle152.copyWith(
-                    color: const Color(0xFF435EAD),
+    return SizedBox(
+      child: Container(
+      decoration: const BoxDecoration(
+      image: DecorationImage(
+      image: AssetImage(AssetData.backGround ),
+      fit: BoxFit.fitHeight,
+      ),
+      ),
+        child: Center(
+            child: Column(
+              mainAxisAlignment:MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/clock.png',
+                  width: 300,
+                  height: 300,
                 ),
-                ),
-            ],
-          ),
+                 Text(
+                  'On Time',
+                  style: Styles.textStyle152.copyWith(
+                      color: const Color(0xFF435EAD),
+                  ),
+                  ),
+              ],
+            ),
+        ),
       ),
     );
   }

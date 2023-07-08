@@ -6,16 +6,16 @@ import '../../../../core/utilies/styles.dart';
 import 'dept_body.dart';
 
 
-class AttResult extends StatefulWidget {
+class DeptResult extends StatefulWidget {
   // final String qrCode;
 
-  const AttResult({Key? key}) : super(key: key);
+  const DeptResult({Key? key}) : super(key: key);
 
   @override
-  State<AttResult> createState() => _AttResultState();
+  State<DeptResult> createState() => _DeptResultState();
 }
 
-class _AttResultState extends State<AttResult> {
+class _DeptResultState extends State<DeptResult> {
   @override
   void initState() {
     super.initState();

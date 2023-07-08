@@ -43,7 +43,7 @@ class AttBody extends StatelessWidget {
                     SizedBox(width: 8),
                     Text(
                       'Attendance',
-                      style: Styles.textStyle152.copyWith(fontSize: 37 , fontWeight: FontWeight.w700)
+                      style: Styles.textStyle152.copyWith(fontSize: 37 , fontWeight: FontWeight.w700),
                     ),
                   ],
                 ),
