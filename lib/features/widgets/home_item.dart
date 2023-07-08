@@ -36,31 +36,41 @@ import '../../core/utilies/styles.dart';
 class GridItem extends StatelessWidget {
   final String iconImage;
   final String title;
+  final VoidCallback onPressed;
 
-  const GridItem({required this.iconImage, required this.title, Key? key})
+  const GridItem(
+      {required this.iconImage, required this.title, Key? key, required this.onPressed})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: Colors.blue,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(
-            child: Image.asset(
-              iconImage,
-              fit: BoxFit.contain,
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(19),
+          color: Colors.white,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: FractionallySizedBox(
+                widthFactor: 0.5, // Adjust this value to make the image smaller
+                heightFactor: 0.5,
+                child: Image.asset(
+                  iconImage,
+                  fit: BoxFit.contain,
+                ),
+              ),
             ),
-          ),
-          Text(
-            title,
-            style: Styles.textStyle152.copyWith(fontSize: 30),
-          ),
-        ],
+            Text(
+              title,
+              style: Styles.textStyle152.copyWith(fontSize: 30),
+            ),
+          ],
+        ),
       ),
     );
   }

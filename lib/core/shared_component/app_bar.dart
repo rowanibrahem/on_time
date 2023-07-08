@@ -5,11 +5,10 @@ import '../utilies/styles.dart';
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const AppBarWidget({Key? key}) : super(key: key);
   @override
-  Size get preferredSize => const Size(double.infinity, 114);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 90);
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: 150,
       backgroundColor: kPrimaryColor,
       flexibleSpace: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 27),
@@ -21,22 +20,21 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
               "Welcome Back,",
               style: Styles.textStyle152.copyWith(color: Colors.grey ,  fontSize: 30),
             ),
-            Expanded(
-              child: Container(
-                alignment: Alignment.centerLeft,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children:  [
-                    Text(
-                      "Rowan Ibrahim",
-                      style: Styles.textStyle152.copyWith(color: Colors.white , fontSize: 20),
-                    ),
-                    Text(
-                      '100',
-                      style:  Styles.textStyle152.copyWith(color: Colors.white , fontSize: 20),
-                    ),
-                  ],
-                ),
+            SizedBox(height: 10),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children:  [
+                  Text(
+                    "Rowan Ibrahim",
+                    style: Styles.textStyle152.copyWith(color: Colors.white , fontSize: 20),
+                  ),
+                  Text(
+                    '100',
+                    style:  Styles.textStyle152.copyWith(color: Colors.white , fontSize: 20),
+                  ),
+                ],
               ),
             ),
             Row(

@@ -16,12 +16,30 @@ class _VacationBodyState extends State<VacationBody> {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('From'),
+            Column(
+              children: [
+                Text('From'),
+
+              ],
+            ),
             Text('To')
           ],
         ),
-        //datapacker
+        TextField(
+          decoration: InputDecoration(
+            filled: true,
+            suffixIcon: Icon(Icons.calendar_month_outlined),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide.none,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color : Colors.blue)
+            )
+          ),
+          // readOnly: true,
+        ),
         SizedBox(
           height: 100,
         ),

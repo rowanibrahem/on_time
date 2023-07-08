@@ -5,7 +5,7 @@ import 'core/shared_component/bottom_navigation_bar.dart';
 import 'core/utilies/assets.dart';
 import 'features/attendence/presentation/widgets/attednce_view.dart';
 import 'features/notices_page/presentation/widgets/notice_body.dart';
-import 'features/vacation/presentation/widgets/alert_test.dart';
+import 'features/vacation/presentation/widgets/vacation_body.dart';
 import 'features/vacation/presentation/widgets/vacation_view.dart';
 import 'features/widgets/home_item.dart';
 import 'features/widgets/home_page.dart';
@@ -25,14 +25,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(
-      decoration: BoxDecoration(
-      image: DecorationImage(
-      image: AssetImage(AssetData.backGround),
-    fit: BoxFit.cover,
-    ),
-    ),
-      child :  NoticesPage(),
+      home:  Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AssetData.backGround),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child :  HomePage(),
     ),
     );
   }
