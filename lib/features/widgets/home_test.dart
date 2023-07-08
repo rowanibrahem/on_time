@@ -12,7 +12,7 @@
 // import '../more_page/widgets/more_screen.dart';
 // import '../notices_page/presentation/widgets/notice_body.dart';
 // import '../permissions/presentitation/widgets/permission_view.dart';
-// import '../profile_detail_page/presentation/widgets/profile_details.dart';
+// import '../profile_detail_page/presentation/widgets/profile_details_view.dart';
 // import '../vacation/presentation/widgets/vacation_view.dart';
 // import 'home_item.dart';
 //

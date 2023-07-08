@@ -14,3 +14,30 @@
 //     );
 //   }
 // }
+// import 'package:flutter/material.dart';
+//
+// class Test extends StatelessWidget {
+//   const Test({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return showDialog(
+//         context: context,
+//         builder: (BuildContext context){
+//           return AlertDialog(
+//             title: Text('Dialog Title'),
+//             content: Text('This is the content of the dialog.'),
+//             actions: [
+//               TextButton(
+//                 child: Text('Close'),
+//                 onPressed: () {
+//                   Navigator.of(context).pop();
+//                 },
+//               ),
+//             ],
+//           );
+//         }
+//     );
+//   }
+// }
+//

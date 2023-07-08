@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:on_time/features/widgets/main_page.dart';
 
 
 
@@ -153,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                          builder: (context) => const HomePage(),
+                          builder: (context) => MainPage(title: ''),
                       ),
                       );
                     },

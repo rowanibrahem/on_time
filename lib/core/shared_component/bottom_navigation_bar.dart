@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../features/more_page/widgets/more_screen.dart';
 import '../../features/notices_page/presentation/widgets/notice_body.dart';
-import '../../features/profile_detail_page/presentation/widgets/profile_details.dart';
+import '../../features/profile_detail_page/presentation/widgets/profile_details_view.dart';
 import '../../features/widgets/home_page.dart';
 
 

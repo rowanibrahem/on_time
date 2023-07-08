@@ -186,11 +186,48 @@ class _VacationBodyState extends State<VacationBody> {
               padding: const EdgeInsets.all(20.0),
             ),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => AlertPage(),
-                ),
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => AlertPage(),
+              //   ),
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context){
+                    return AlertDialog(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      content: Container(
+                        width: 300,
+                        height: 200,
+                        child: Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              CircleAvatar(
+                                radius: 40.0,
+                                backgroundColor: kPrimaryColor,
+                                child: Icon(
+                                  Icons.check_sharp,
+                                  size: 60.0,
+                                  weight: 100,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(height: 20.0),
+                              Text(
+                                'Your vacation is pending',
+                                  style: Styles.textStyle152.copyWith(color: kPrimaryColor , fontSize: 20 , fontWeight: FontWeight.bold )
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ),
+
+                    );
+                  }
               );
             },
             child: Text(
