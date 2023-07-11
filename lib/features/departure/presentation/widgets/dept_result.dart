@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../constants.dart';
 import '../../../../core/utilies/styles.dart';
 
+import 'butttom_5.dart';
 import 'dept_body.dart';
 
 
@@ -26,7 +27,7 @@ class _DeptResultState extends State<DeptResult> {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => DeptBody()),
+        MaterialPageRoute(builder: (context) => BottomNav5()),
       );
     });
   }

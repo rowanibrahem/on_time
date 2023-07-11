@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../constants.dart';
 import '../../../../core/utilies/styles.dart';
 import 'attendance_body.dart';
+import 'buttom_4.dart';
 
 
 class AttResult extends StatefulWidget {
@@ -25,7 +26,7 @@ class _AttResultState extends State<AttResult> {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => AttBody()),
+        MaterialPageRoute(builder: (context) => BottomNav4()),
       );
     });
   }

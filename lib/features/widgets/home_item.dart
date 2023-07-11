@@ -47,27 +47,20 @@ class GridItem extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-          height: MediaQuery.of(context).size.height*.29,
-
-        decoration: BoxDecoration(
-          // borderRadius: BorderRadius.circular(19),
-          color: Colors.white,
-          border: Border.all(width: 4, color: Colors.black),
-        ),
+        height: MediaQuery.of(context).size.height*.29,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
-              child: FractionallySizedBox(
-                widthFactor: 0.5, // Adjust this value to make the image smaller
-                heightFactor: 0.5,
-                child: Image.asset(
-                  iconImage,
-                  fit: BoxFit.contain,
-                ),
+              child: Image.asset(
+                iconImage,
+                width: 200,
+                height: 200,
+                fit: BoxFit.contain,
               ),
             ),
+            SizedBox(height: 10),
             Text(
               title,
               style: Styles.textStyle152.copyWith(fontSize: 30),
