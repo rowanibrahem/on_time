@@ -15,6 +15,7 @@ class AuthCubit extends Cubit<AuthStates> {
   void logIn({
     required String userName,
     required String password,
+    required Function sfunction,
   }) async {
     emit(LogInLoadingState());
     try {
@@ -36,16 +37,17 @@ class AuthCubit extends Cubit<AuthStates> {
 
       if (response.statusCode == 200) {
         var responseData = jsonDecode(response.body);
-        if (responseData['status'] == true) {
-          await CacheNetwork.insertToCashe(
-              key: "token", value: responseData['data']['token']);
+        if (responseData['status'] == "OK") {
+          await CacheNetwork.insertToCashe(key: "token", value: responseData['data']['token']);
           await CacheNetwork.insertToCashe(key: "password", value: password);
           token = await CacheNetwork.getCacheData(key: "token");
           emit(LogInSuccessState());
           debugPrint("LogIN Succcessfully, token is : $token");
-        } else {
+          sfunction();
+        } else if (responseData['status'] == "UNAUTHORIZED"){
           emit(LogInFailedState(message: responseData['errorMsg']));
           debugPrint("Failed to LogIn : ${responseData['errorMsg']}");
+
         }
       }
     } catch (e) {

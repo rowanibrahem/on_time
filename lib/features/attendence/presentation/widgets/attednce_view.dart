@@ -7,7 +7,6 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 
 import '../../../../constants.dart';
-import '../../../../core/utilies/assets.dart';
 import '../../../../core/utilies/styles.dart';
 import 'attendence_result.dart';
 
@@ -25,6 +24,12 @@ class _QrState extends State<Qr> {
   void closeScreen() {
     isScanCompleted = false;
   }
+  late QRViewController controller;
+  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+
+  // Username and password variables
+  String username = '';
+  String password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +85,11 @@ class _QrState extends State<Qr> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => AttResult()));
-                        }
+                        };
                       },
+
                     ),
+                     // mode: BarcodeCapture.auto;
                     QRScannerOverlay(overlayColour: Colors.grey.withOpacity(.5),),
                   ],
                 )),

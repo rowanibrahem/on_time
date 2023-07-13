@@ -5,6 +5,6 @@ class LogInSuccessState extends AuthStates{}
 class LogInFailedState extends AuthStates{
   String ?message;
   LogInFailedState({
-    required this.message
+    required this.message,
   });
 }

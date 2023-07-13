@@ -42,18 +42,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:on_time/features/permissions/presentitation/widgets/permission_view.dart';
-import 'package:on_time/features/splash_screen/presentation/widgets/splash_view.dart';
-import 'package:on_time/features/vacation/presentation/widgets/vacation_view.dart';
+import 'package:on_time/features/widgets/log_in%20screen.dart';
 
 
 import 'constants.dart';
-import 'features/widgets/bottom_nav.dart';
-import 'features/widgets/home_page.dart';
 import 'features/widgets/views/bloc_observer.dart';
 import 'features/widgets/views/body.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'features/widgets/views/network.dart';
 
 
@@ -77,7 +71,7 @@ class MyApp extends StatelessWidget {
     title: title,
     theme: ThemeData(primarySwatch: Colors.blue),
     debugShowCheckedModeBanner: false,
-    home:  SplashScreen(),
+    home: LoginScreen(),
   ),
 
   );

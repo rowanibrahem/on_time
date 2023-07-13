@@ -204,7 +204,10 @@ class _BottomNavState extends State<BottomNav> {
               isScrollControlled: true,
               context: context,
               builder: (BuildContext context){
-                return buttomSheetStyle();
+                return Container(
+                  height: MediaQuery.of(context).size.height * .2,
+                    child: buttomSheetStyle(),
+                );
               },
             );
           },
