@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           TextFormField(
                             controller: emailController,
                             decoration:  InputDecoration(
-                              labelText: 'enter your email',
+                              labelText: 'enter your username',
                               hintText: 'your email',
                               prefixIcon: Icon(
                                 Icons.person,
@@ -227,18 +227,15 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-SnackBar customSnackBar({
-  required String message
-}){
+
+SnackBar customSnackBar({required String message}) {
   return SnackBar(
     content: Container(
         alignment: Alignment.center,
         height: 40,
-        child: Text(message,
-          style: TextStyle(
-              fontSize: 16
-          ),
-        )
-    ),
+        child: Text(
+          message,
+          style: TextStyle(fontSize: 16),
+        )),
   );
 }

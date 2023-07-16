@@ -53,6 +53,7 @@ class _PermissionBodyState extends State<PermissionBody> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
+                      alignment: Alignment.center,
                       height: 50,
                       width: 100,
                       decoration: BoxDecoration(

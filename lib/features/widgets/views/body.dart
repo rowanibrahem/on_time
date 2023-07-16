@@ -12,7 +12,7 @@ import 'package:http/http.dart' as http;
 
 class AuthCubit extends Cubit<AuthStates> {
   AuthCubit() : super(IntialState());
-
+  String? userNameData;
   void logIn({
     required String userName,
     required String password,
@@ -37,6 +37,7 @@ class AuthCubit extends Cubit<AuthStates> {
       );
       // var pref = await SharedPreferences.getInstance();
       if (response.statusCode == 200) {
+        userNameData=userName;
         var responseData = jsonDecode(response.body);
         if (responseData['status'] == "OK") {
           await CacheNetwork.insertToCashe(key: "token", value: responseData['data']['token']);
