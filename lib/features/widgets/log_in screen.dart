@@ -17,15 +17,15 @@ class LoginScreen extends StatefulWidget {
 
 var emailController = TextEditingController();
 var passwordController = TextEditingController();
+
+
 bool isPasswordVisible = false;
 bool? currentValue;
 bool _remember = false;
+var formKey = GlobalKey <FormState>();
 
 class _LoginScreenState extends State<LoginScreen> {
-  var emailController = TextEditingController();
-  var passwordController = TextEditingController();
-  var formKey = GlobalKey <FormState>();
-  bool isPassword = true;
+
   @override
   Widget build(BuildContext context) {
     return  BlocConsumer<AuthCubit ,AuthStates> (
@@ -36,12 +36,12 @@ class _LoginScreenState extends State<LoginScreen> {
         }
 
         else if(state is LogInFailedState){
-          // Navigator.pop(context);
+          Navigator.pop(context);
           ScaffoldMessenger.of(context).showSnackBar(
               customSnackBar (message: state.message!),
           );
         }
-        else if(state is LogInLoadingState){
+        else {
           showDialog(context: context, builder: (_)=>AlertDialog(
             content: Row(
               children: [
@@ -197,17 +197,17 @@ class _LoginScreenState extends State<LoginScreen> {
                               // minimumSize: Size(150, 50),
                             ),
                             onPressed: () {
-                              if (formKey.currentState!.validate() == true) {
+                              if (formKey.currentState!.validate()) {
                                 BlocProvider.of<AuthCubit>(context).logIn(
                                   userName: emailController.text,
                                   password: passwordController.text,
-                                  sfunction: () {
-                                    // Success function: Navigate to the next screen upon successful login
-                                    Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => BottomNav()),
-                                    );
-                                  },
+                                  // sfunction: () {
+                                  //   // Success function: Navigate to the next screen upon successful login
+                                  //   Navigator.pushReplacement(
+                                  //     context,
+                                  //     MaterialPageRoute(builder: (context) => BottomNav()),
+                                  //   );
+                                  // },
                                 );
                               }
                             },

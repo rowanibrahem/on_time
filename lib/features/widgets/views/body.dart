@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
+
 import '../../../constants.dart';
 import 'network.dart';
 import 'states.dart';
@@ -15,7 +16,7 @@ class AuthCubit extends Cubit<AuthStates> {
   void logIn({
     required String userName,
     required String password,
-    required Function sfunction,
+    // required Function sfunction,
   }) async {
     emit(LogInLoadingState());
     try {
@@ -34,7 +35,7 @@ class AuthCubit extends Cubit<AuthStates> {
         headers: {'Content-Type': 'application/json'},
         body: requestBody,
       );
-
+      // var pref = await SharedPreferences.getInstance();
       if (response.statusCode == 200) {
         var responseData = jsonDecode(response.body);
         if (responseData['status'] == "OK") {
@@ -43,12 +44,17 @@ class AuthCubit extends Cubit<AuthStates> {
           token = await CacheNetwork.getCacheData(key: "token");
           emit(LogInSuccessState());
           debugPrint("LogIN Succcessfully, token is : $token");
-          sfunction();
-        } else if (responseData['status'] == "UNAUTHORIZED"){
+          // pref.setString("token", responseData['token']);
+          // pref.setString("userName",responseData['userName']);
+          // pref.setString("password",responseData['password']);
+          // sfunction();
+        } else {
           emit(LogInFailedState(message: responseData['errorMsg']));
           debugPrint("Failed to LogIn : ${responseData['errorMsg']}");
 
         }
+      }  else {
+        emit(LogInFailedState(message: "Incorrect Username or Password "));
       }
     } catch (e) {
       emit(LogInFailedState(message: "Something went wrong, Try again later"));

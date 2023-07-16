@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:on_time/constants.dart';
 import '../../../../core/utilies/assets.dart';
 import '../../../../core/utilies/styles.dart';
@@ -55,7 +54,7 @@ class _PermissionBodyState extends State<PermissionBody> {
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       height: 50,
-                      width: 50,
+                      width: 100,
                       decoration: BoxDecoration(
                          color: Colors.white,
                          borderRadius: BorderRadius.circular(7),
