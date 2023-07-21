@@ -5,7 +5,7 @@ import 'package:on_time/features/widgets/buttom%20sheet.dart';
 
 import '../more_page/widgets/more_screen.dart';
 import '../notices_page/presentation/widgets/notice_body.dart';
-import '../profile_detail_page/presentation/widgets/profile_details_view.dart';
+import '../profile_detail_page/presentation/views/profile_details_view.dart';
 
 import 'home_page.dart';
 
@@ -127,8 +127,8 @@ class _BottomNavState extends State<BottomNav> {
                         children: [
                           Image.asset(
                             'assets/images/Icon metro-profile.png' ,
-                            width: 35,
-                            height: 35,
+                            width: 40,
+                            height: 40,
                             color: currentindex == 2 ? Colors.blue : Colors.grey,
                           ),
                           Text(
@@ -151,11 +151,24 @@ class _BottomNavState extends State<BottomNav> {
                     MaterialButton(
                       minWidth: 40,
                       onPressed: (){
-                        setState(() {
-                          currentScreen = MoreScreen();
-                          currentindex = 3;
-                        });
-                      },
+            showModalBottomSheet(
+              constraints: BoxConstraints.expand(
+                  width: double.infinity ,
+                  height: MediaQuery.of(context).size.height * .3
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+              ),
+              isScrollControlled: true,
+              context: context,
+              builder: (BuildContext context){
+                return Container(
+                  height: MediaQuery.of(context).size.height * .2,
+                    child: buttomSheetStyle(),
+                );
+              },
+            );
+          },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

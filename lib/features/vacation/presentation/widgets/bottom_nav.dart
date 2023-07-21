@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:on_time/features/vacation/presentation/widgets/vacation_view.dart';
 import 'package:on_time/features/widgets/buttom%20sheet.dart';
 
+
 import '../../../more_page/widgets/more_screen.dart';
 import '../../../notices_page/presentation/widgets/notice_body.dart';
-import '../../../profile_detail_page/presentation/widgets/profile_details_view.dart';
+import '../../../profile_detail_page/presentation/views/profile_details_view.dart';
 import '../../../widgets/home_page.dart';
-
-
 
 
 class BottomNav2 extends StatefulWidget {
@@ -21,7 +20,7 @@ class BottomNav2 extends StatefulWidget {
 }
 
 class _BottomNav2State extends State<BottomNav2> {
-  int currentindex = 4;
+  int currentindex = 0;
   final List<Widget> _tabs = [
     HomePage(),
     NoticesPage(),
@@ -29,7 +28,7 @@ class _BottomNav2State extends State<BottomNav2> {
     MoreScreen(),
     VacationView(),
   ];
-  Widget currentScreen = VacationView();
+  Widget currentScreen = HomePage();
 
   @override
   Widget build(BuildContext context) =>
@@ -128,8 +127,8 @@ class _BottomNav2State extends State<BottomNav2> {
                         children: [
                           Image.asset(
                             'assets/images/Icon metro-profile.png' ,
-                            width: 35,
-                            height: 35,
+                            width: 40,
+                            height: 40,
                             color: currentindex == 2 ? Colors.blue : Colors.grey,
                           ),
                           Text(
@@ -152,10 +151,23 @@ class _BottomNav2State extends State<BottomNav2> {
                     MaterialButton(
                       minWidth: 40,
                       onPressed: (){
-                        setState(() {
-                          currentScreen = MoreScreen();
-                          currentindex = 3;
-                        });
+                        showModalBottomSheet(
+                          constraints: BoxConstraints.expand(
+                              width: double.infinity ,
+                              height: MediaQuery.of(context).size.height * .3
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+                          ),
+                          isScrollControlled: true,
+                          context: context,
+                          builder: (BuildContext context){
+                            return Container(
+                              height: MediaQuery.of(context).size.height * .2,
+                              child: buttomSheetStyle(),
+                            );
+                          },
+                        );
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -205,7 +217,10 @@ class _BottomNav2State extends State<BottomNav2> {
               isScrollControlled: true,
               context: context,
               builder: (BuildContext context){
-                return buttomSheetStyle();
+                return Container(
+                  height: MediaQuery.of(context).size.height * .2,
+                  child: buttomSheetStyle(),
+                );
               },
             );
           },
@@ -213,9 +228,9 @@ class _BottomNav2State extends State<BottomNav2> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       );
 
-  // void onChangedTab(int index) {
-  //   setState(() {
-  //     this.index = index;
-  //   });
-  // }
+// void onChangedTab(int index) {
+//   setState(() {
+//     this.index = index;
+//   });
+// }
 }

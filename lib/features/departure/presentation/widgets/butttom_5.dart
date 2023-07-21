@@ -4,7 +4,7 @@ import 'package:on_time/features/widgets/buttom%20sheet.dart';
 
 import '../../../more_page/widgets/more_screen.dart';
 import '../../../notices_page/presentation/widgets/notice_body.dart';
-import '../../../profile_detail_page/presentation/widgets/profile_details_view.dart';
+import '../../../profile_detail_page/presentation/views/profile_details_view.dart';
 import '../../../widgets/home_page.dart';
 import 'dept_body.dart';
 

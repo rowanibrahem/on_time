@@ -1,51 +1,13 @@
-// import 'package:flutter/material.dart';
-//
-// import 'core/shared_component/app_bar2.dart';
-// import 'core/shared_component/bottom_navigation_bar.dart';
-// import 'core/utilies/assets.dart';
-// import 'features/attendence/presentation/widgets/attednce_view.dart';
-// import 'features/notices_page/presentation/widgets/notice_body.dart';
-// import 'features/vacation/presentation/widgets/vacation_body.dart';
-// import 'features/vacation/presentation/widgets/vacation_view.dart';
-// import 'features/widgets/home_item.dart';
-// import 'features/widgets/home_page2.dart';
-// import 'features/widgets/home_page.dart';
-//
-// void main() {
-//   runApp(const MyApp());
-// }
-//
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-//
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home:  Container(
-//         decoration: const BoxDecoration(
-//           image: DecorationImage(
-//             image: AssetImage(AssetData.backGround),
-//             fit: BoxFit.cover,
-//           ),
-//         ),
-//         child :  HomePage(),
-//     ),
-//     );
-//   }
-// }
-//
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:on_time/features/widgets/log_in%20screen.dart';
+import 'package:on_time/features/splash_screen/presentation/widgets/splash_view.dart';
+import 'package:on_time/features/vacation/presentation/widgets/vacation_view.dart';
+import 'package:on_time/features/widgets/home_page.dart';
 
 
 import 'constants.dart';
+import 'features/profile_detail_page/presentation/views/profile_details_view.dart';
+import 'features/widgets/bottom_nav.dart';
 import 'features/widgets/views/bloc_observer.dart';
 import 'features/widgets/views/body.dart';
 import 'features/widgets/views/network.dart';
@@ -57,11 +19,13 @@ void main()async{
   await CacheNetwork.cachInstialization();
   token=  await CacheNetwork.getCacheData(key: "token");
   print("tokkkkeeeeeennnnn : $token");
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   final String title = 'BottomAppBar With Centered FAB';
+
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) =>
@@ -71,7 +35,7 @@ class MyApp extends StatelessWidget {
     title: title,
     theme: ThemeData(primarySwatch: Colors.blue),
     debugShowCheckedModeBanner: false,
-    home: LoginScreen(),
+    home: const BottomNav(),
   ),
 
   );

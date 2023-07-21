@@ -33,7 +33,8 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children:  [
                     Text(
-                      BlocProvider.of<AuthCubit>(context).userNameData!,
+                    ('Rowan'),
+                      // BlocProvider.of<AuthCubit>(context).userNameData!,
                       style: Styles.textStyle152.copyWith(color: Colors.white , fontSize: 20),
                     ),
                     Text(

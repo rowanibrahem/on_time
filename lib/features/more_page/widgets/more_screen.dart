@@ -8,3 +8,22 @@ class MoreScreen extends StatelessWidget {
     return const Placeholder();
   }
 }
+//onPressed: (){
+//             showModalBottomSheet(
+//               constraints: BoxConstraints.expand(
+//                   width: double.infinity ,
+//                   height: MediaQuery.of(context).size.height * .3
+//               ),
+//               shape: RoundedRectangleBorder(
+//                 borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+//               ),
+//               isScrollControlled: true,
+//               context: context,
+//               builder: (BuildContext context){
+//                 return Container(
+//                   height: MediaQuery.of(context).size.height * .2,
+//                     child: buttomSheetStyle(),
+//                 );
+//               },
+//             );
+//           },

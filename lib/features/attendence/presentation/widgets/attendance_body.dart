@@ -7,8 +7,8 @@ import '../../../../core/utilies/styles.dart';
 
 
 class AttBody extends StatelessWidget {
-  const AttBody({super.key});
-
+  AttBody({super.key});
+  DateTime currentDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -70,7 +70,7 @@ class AttBody extends StatelessWidget {
                       ),
                       SizedBox(height: 8),
                       Text(
-                        'Monday , Mar 07 , 2022',
+                        currentDate as String ,
                         style: Styles.textStyle152.copyWith(fontSize: 28 , color: Colors.grey),
                       ),
                       SizedBox(height: 50),

@@ -5,7 +5,7 @@ import 'package:on_time/features/vacation/presentation/widgets/vacation_body.dar
 import '../../../../constants.dart';
 import '../../../more_page/widgets/more_screen.dart';
 import '../../../notices_page/presentation/widgets/notice_body.dart';
-import '../../../profile_detail_page/presentation/widgets/profile_details_view.dart';
+import '../../../profile_detail_page/presentation/views/profile_details_view.dart';
 import '../../../widgets/buttom sheet.dart';
 import '../../../widgets/home_page.dart';
 
