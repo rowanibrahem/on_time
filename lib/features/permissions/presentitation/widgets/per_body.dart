@@ -53,38 +53,65 @@ class _PermissionBodyState extends State<PermissionBody> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      alignment: Alignment.center,
-                      height: 50,
-                      width: 100,
-                      decoration: BoxDecoration(
-                         color: Colors.white,
-                         borderRadius: BorderRadius.circular(7),
-                         boxShadow: [
-                           BoxShadow(
-                             color: Colors.grey.withOpacity(0.5),
-                             spreadRadius: 2,
-                             blurRadius: 5,
-                             offset: const Offset(0, 3),
+                      decoration:  BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: const BorderRadius.all(Radius.elliptical(10, 10)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5), // Set the shadow color
+                            spreadRadius: 2, // Set the spread radius of the shadow
+                            blurRadius: 6, // Set the blur radius of the shadow
+                            offset: Offset(0, 3), // Set the offset of the shadow
+                          ),
+                        ],
+                      ),
+                      child: SizedBox(
+                        width: 150,
+                         child: DropdownButtonFormField<String>(
+                           decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.white,
+                              ),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                             focusedBorder: OutlineInputBorder(
+                               borderSide: BorderSide(
+                                 color: Colors.white.withOpacity(.2),
+                                 // width: 2,
+                               ),
+                               borderRadius: BorderRadius.circular(25),
+                             ),
+                             border: InputBorder.none,
                            ),
-                         ],
-                       ),
-                       child: DropdownButton<String>(
-                        icon: const Icon(
-                          Icons.arrow_drop_down ,
-                          size: 32,
+                          icon: const Icon(
+                            Icons.arrow_drop_down_circle ,
+                            color: kPrimaryColor,
+                            size: 30,
+                          ),
+
+                          value: _selectedItem,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              _selectedItem = newValue!;
+                            });
+                          },
+                          items: _dropdownItems.map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Center(
+                                child: Text(
+                                    value,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.grey
+                                  ),
+                                  // textAlign: TextAlign.center,
+                                ),
+                              ),
+                            );
+                          }).toList(),
                         ),
-                        value: _selectedItem,
-                        onChanged: (String? newValue) {
-                          setState(() {
-                            _selectedItem = newValue!;
-                          });
-                        },
-                        items: _dropdownItems.map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
                       ),
                     ),
                   ),
