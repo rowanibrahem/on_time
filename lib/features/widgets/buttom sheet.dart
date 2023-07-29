@@ -8,11 +8,21 @@ Widget buttomSheetStyle(){
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ButtomItem(text: 'Today points',),
-        SizedBox(height: 15,),
-        ButtomItem(text: 'Weekly points',),
-        SizedBox(height: 15,),
-        ButtomItem(text: 'Monthly points',),
+        ButtomItem(
+          text: 'Today points',
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        ButtomItem(
+          text: 'Weekly points',
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        ButtomItem(
+          text: 'Monthly points',
+        ),
       ],
     ),
   );

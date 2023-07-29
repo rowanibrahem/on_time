@@ -10,6 +10,6 @@ abstract class Styles {
   static const textStyle40 = TextStyle(
     fontSize: 40.0,
     fontWeight: FontWeight.bold,
-      fontFamily: 'Tajawal',
+    fontFamily: 'Tajawal',
   );
 }

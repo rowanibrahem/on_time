@@ -18,22 +18,48 @@ class ButtomItem extends StatelessWidget {
             children: [
               Text(
                 text,
-                style: Styles.textStyle152.copyWith(color: kPrimaryColor, fontSize: 30),
+                style: Styles.textStyle152.copyWith(color: kPrimaryColor, fontSize: 35),
               ),
-              SizedBox(
-                width: 100,
-                child: TextField(
-                  keyboardType: TextInputType.multiline,
-                  decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.lightBlueAccent,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide.none,
+               Container(
+                 decoration:  BoxDecoration(
+                   color: Colors.white,
+                   borderRadius: const BorderRadius.all(Radius.elliptical(10, 10)),
+                   boxShadow: [
+                     BoxShadow(
+                       color: Colors.grey.withOpacity(0.5), // Set the shadow color
+                       spreadRadius: 2, // Set the spread radius of the shadow
+                       blurRadius: 6, // Set the blur radius of the shadow
+                       offset: Offset(0, 3), // Set the offset of the shadow
+                     ),
+                   ],
+                 ),
+                width: 120,
+                child: Center(
+                  child: TextField(
+                    textAlign: TextAlign.center, // Set text alignment to center
+                    textAlignVertical: TextAlignVertical.center,
+                    style: TextStyle(
+                      color: kPrimaryColor,
+                      fontSize: 30,
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blue),
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white.withOpacity(.2),
+                          // width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.all(16),
                     ),
-                    contentPadding: EdgeInsets.all(16),
                   ),
                 ),
               ),
