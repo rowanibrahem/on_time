@@ -5,8 +5,10 @@ import 'package:on_time/features/widgets/buttom%20sheet.dart';
 
 import '../../../more_page/widgets/more_screen.dart';
 import '../../../notices_page/presentation/widgets/notice_body.dart';
+import '../../../permissions/presentitation/widgets/bottom_3.dart';
 import '../../../profile_detail_page/presentation/views/profile_details_view.dart';
 import '../../../widgets/home_page.dart';
+import '../../../widgets/log_in screen.dart';
 
 
 class BottomNav2 extends StatefulWidget {
@@ -20,7 +22,7 @@ class BottomNav2 extends StatefulWidget {
 }
 
 class _BottomNav2State extends State<BottomNav2> {
-  int currentindex = 0;
+  int currentindex = 4;
   final List<Widget> _tabs = [
     HomePage(),
     NoticesPage(),
@@ -28,7 +30,7 @@ class _BottomNav2State extends State<BottomNav2> {
     MoreScreen(),
     VacationView(),
   ];
-  Widget currentScreen = HomePage();
+  Widget currentScreen = VacationView();
 
   @override
   Widget build(BuildContext context) =>
@@ -151,23 +153,7 @@ class _BottomNav2State extends State<BottomNav2> {
                     MaterialButton(
                       minWidth: 40,
                       onPressed: (){
-                        showModalBottomSheet(
-                          constraints: BoxConstraints.expand(
-                              width: double.infinity ,
-                              height: MediaQuery.of(context).size.height * .3
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-                          ),
-                          isScrollControlled: true,
-                          context: context,
-                          builder: (BuildContext context){
-                            return Container(
-                              height: MediaQuery.of(context).size.height * .2,
-                              child: buttomSheetStyle(),
-                            );
-                          },
-                        );
+                        _showPopupMenu(context);
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -233,4 +219,40 @@ class _BottomNav2State extends State<BottomNav2> {
 //     this.index = index;
 //   });
 // }
+}
+void _showPopupMenu(BuildContext context) async {
+  String? result = await showMenu(
+    context: context,
+    position: RelativeRect.fromLTRB(1042.0, 1042.0, 0.0, 0.0), // Adjust the position as needed
+    items: [
+      PopupMenuItem(child: Text('Permission'), value: 'permission'),
+      PopupMenuItem(child: Text('Vacation'), value: 'vacation'),
+      PopupMenuItem(child: Text('LogOut'), value: 'logout'),
+    ],
+  );
+
+  // Handle the selected option here (e.g., navigate to different pages)
+  switch (result) {
+    case 'permission':
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const BottomNav3()),
+      );
+      break;
+    case 'vacation':
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const BottomNav2()),
+      );
+      break;
+    case 'logout':
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+      );
+      break;
+  // Add more cases for other options if needed
+    default:
+      break;
+  }
 }

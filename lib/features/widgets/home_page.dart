@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                           iconImage: AssetData.fourthIcon,
                           title: 'Vacation',
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> BottomNav2 ()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> BottomNav2()));
                           },
                         ),
                       ],
