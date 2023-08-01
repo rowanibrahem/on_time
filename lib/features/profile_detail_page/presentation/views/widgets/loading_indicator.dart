@@ -119,7 +119,7 @@ class _WeeklyLoadingIndicatorState extends State<WeeklyLoadingIndicator> {
     return Padding(
       padding: EdgeInsets.all(15.0),
       child: LinearPercentIndicator(
-        width: MediaQuery.of(context).size.width * .75,
+        width: MediaQuery.of(context).size.width * .7,
         animation: true,
         lineHeight: 25.0,
         animationDuration: 2500,

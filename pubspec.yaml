@@ -47,7 +47,12 @@ dependencies:
   http:
   flutter_bloc:
   shared_preferences:
-  flutter_speed_dial: ^7.0.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/clock.png"
+
 
 dev_dependencies:
   flutter_test:

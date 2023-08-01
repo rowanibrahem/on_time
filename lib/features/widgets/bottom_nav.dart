@@ -198,7 +198,7 @@ class _BottomNavState extends State<BottomNav> {
             showModalBottomSheet(
               constraints: BoxConstraints.expand(
                   width: double.infinity ,
-                  height: MediaQuery.of(context).size.height * .3
+                  height: MediaQuery.of(context).size.height * .4,
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
@@ -226,7 +226,9 @@ class _BottomNavState extends State<BottomNav> {
 void _showPopupMenu(BuildContext context) async {
   String? result = await showMenu(
     context: context,
-    position: RelativeRect.fromLTRB(1042.0, 1042.0, 0.0, 0.0), // Adjust the position as needed
+    position: RelativeRect.fromLTRB(
+        MediaQuery.of(context).size.height*.67,
+        MediaQuery.of(context).size.height*.67, 0.0, 0.0), // Adjust the position as needed
     items: [
       PopupMenuItem(child: Text('Permission'), value: 'permission'),
       PopupMenuItem(child: Text('Vacation'), value: 'vacation'),

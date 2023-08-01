@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
         body: Center(
           child: SingleChildScrollView(
             child: Container(
-              height: MediaQuery.of(context).size.height*.6,
+              height: MediaQuery.of(context).size.height*.65,
               width: MediaQuery.of(context).size.width*.9,
               decoration: BoxDecoration(
                 color: Colors.white,
